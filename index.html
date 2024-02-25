@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cherry+Bomb+One&family=Merriweather:ital,wght@1,300&family=Montserrat:wght@300&family=Noto+Serif&family=REM:wght@300&family=Roboto:wght@100&family=Ubuntu:wght@300&family=Ysabeau+Office:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="toggle">
+        <div class="circle"></div>
+    </div>
+    <div class="calculate">
+        <div class="button">
+            <h2 id="value"></h2>
+            <span id="clear">Clear</span>
+            <span>/</span>
+            <span>*</span>
+            <span>7</span>
+            <span>8</span>
+            <span>9</span>
+            <span>-</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+            <span id="plus">+</span>
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>0</span>
+            <span>00</span>
+            <span>.</span>
+            <span id="equal">=</span>
+        </div>
+    </div>
+    <script>
+
+        let button = document.querySelector('.button')
+        let btn = document.querySelectorAll('span')
+        let value = document.getElementById('value')
+        let toggleBtn = document.querySelector('.toggle')
+        let circle = document.querySelector('.circle')
+        let body = document.querySelector('body')
+        for(let i = 0; i < btn.length; i++){
+            btn[i].addEventListener('click', function(){
+                if(this.innerHTML == "="){
+                    value.innerHTML = eval(value.innerHTML);
+                }
+                else{
+                    if(this.innerHTML == "Clear"){
+                        value.innerHTML = "";
+                    }
+                    else{
+                        value.innerHTML += this.innerHTML;
+                    }
+                }
+            })
+            toggleBtn.onclick = function(){
+                body.classList.toggle('dark')
+                circle.classList.toggle('active')
+                toggleBtn.classList.toggle('bg')
+            }
+        }
+
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

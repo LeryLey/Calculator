@@ -1,0 +1,135 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgb(230, 233, 235);
+}
+.toggle{
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    right: 2px;
+    width: 40px;
+    height: 20px;
+    border-radius: 60px;
+    top: 20px;
+    padding: 2px;
+    right: 20px;
+    background: rgb(6, 233, 44);
+    cursor: pointer;
+}
+.toggle .circle{
+    position: absolute;
+    display: flex;
+    height:15px;
+    width: 15px;
+    border-radius: 50%;
+    background: rgb(245, 245, 245);
+    transition: 0.5s;
+
+}
+.active{
+    position: relative;
+    display: flex;
+    left: 2px;
+    background:rgb(63, 58, 58) ;
+}
+.toggle .active{
+    background: #ccc;
+}
+.bg{
+    background: #fff;
+}
+.dark{
+    background: #222;
+}
+.calculate{
+    position: relative;
+    height: 400px;
+    width: 300px;
+    padding: 20px;
+    background: #edebeb;
+    border-radius: 10px;
+    box-shadow:  20px 20px 47px #bebebe,
+             -20px -20px 47px #ffffff;
+    
+}
+.dark .calculate{
+    background: #272626;
+    box-shadow:  20px 20px 47px #1c1a1a,
+    -20px -20px 47px #121111;
+}
+.calculate .button{
+    position: relative;
+    display: grid;
+}
+.calculate .button #value{
+    position: relative;
+    display: flex;
+    grid-column: span 4;
+    height: 65px;
+    width: 100%;
+    justify-content: end;
+    align-items: center;
+    padding: 0 10px;
+    border-radius: 5px;
+    box-shadow: inset 5px 5px 10px rgba(0,0,0,0.1),
+    inset -5px -5px 10px #ffffff;
+    color: rgb(0, 162, 255);
+    font-size: 1.6em;
+    font-weight: bold;
+    user-select: none;
+    overflow: hidden;
+}
+.dark .calculate .button #value{
+    box-shadow: inset 15px 15px 10px rgba(0, 0, 0, 0.1),
+    inset -5px -5px 10px #373535;
+}
+.calculate .button span{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:  5px 5px 10px rgba(54, 53, 53, 0.1),
+    -5px -5px 10px #ffffff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    user-select: none;
+    font-weight: 600;
+    transition: 0.5s;
+    cursor: pointer;
+    min-width: 40px;
+}
+.dark .calculate .button span{
+    color: white;
+    box-shadow:  5px 5px 10px rgba(161, 147, 147, 0.1),
+    -5px -5px 10px #403f3f;
+}
+.calculate .button span:hover{
+    box-shadow: 0 0 5px rgb(201, 200, 200);
+}
+.calculate .button span#clear{
+   grid-column: span 2;
+   background: rgb(255, 59, 59);
+   color: white;
+}
+.calculate .button span#plus{
+    grid-row: span 2;
+    background: rgb(15, 204, 103);
+    color: white;
+}
+.calculate .button span#equal
+{
+    background: rgb(15, 126, 205);
+    color: white;
+}
